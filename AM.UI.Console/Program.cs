@@ -100,18 +100,18 @@ Passenger pasn = new Passenger()
 {
     BirthDate = new DateTime(2023, 1, 1),
     EmailAddress = "hanen.hammouda@esprit.tn",
-    FirstName = "hanen",
-    LastName = "hammouda",
+   // FirstName = "hanen",
+    //LastName = "hammouda",
     TelNumber = 50066282,
     PassportNumber = 123456
 };
 
-bool Result = pasn.checkProfil("hanen", "hammouda");
-if (Result) { Console.WriteLine("nom est correct"); }
-else Console.WriteLine("incorrect");
+//bool Result = pasn.checkProfil("hanen", "hammouda");
+//if (Result) { Console.WriteLine("nom est correct"); }
+//else Console.WriteLine("incorrect");
 
-Console.WriteLine("************  Le Polymorphisme Q10  b ************* ");
-Console.WriteLine(pasn.checkProfil("hanen", "hammouda", "hanen.hammouda@esprit.tn"));
+//Console.WriteLine("************  Le Polymorphisme Q10  b ************* ");
+//Console.WriteLine(pasn.checkProfil("hanen", "hammouda", "hanen.hammouda@esprit.tn"));
 
 Console.WriteLine("************  Le Polymorphisme Q11 a b c ************* ");
 Passenger traveller = new Traveller();
@@ -180,9 +180,9 @@ foreach (var flight in serviceFlight.OrderedDurationFlights())
 {
     Console.WriteLine("l'ordere est: " + flight);
 };
-foreach (var f in serviceFlight.SeniorTravellers(TestData.F1))
+//foreach (var f in serviceFlight.SeniorTravellers(TestData.F1))
 {
-    Console.WriteLine("les senior travellers: " + f.FirstName);
+    //Console.WriteLine("les senior travellers: " + f.FirstName);
 };
 Console.WriteLine("les vols groupés par destination: ");
 serviceFlight.DestinationGroupedFlights();
@@ -191,8 +191,8 @@ Console.WriteLine(serviceFlight.DurationAverageDel("Paris"));
 serviceFlight.FlightDetailsDel(avion2);
 Passenger pasn1 = new Passenger()
 {
-    FirstName = "kharroubi",
-    LastName = "hazem"
+    //FirstName = "kharroubi",
+    //LastName = "hazem"
 };
 //{
 //    FirstName = "stormi",

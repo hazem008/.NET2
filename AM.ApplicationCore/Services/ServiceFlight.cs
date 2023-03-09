@@ -216,15 +216,15 @@ namespace AM.ApplicationCore.Services
             return query.ToList();
         }
         //List<Passenger> SensiorTravellers(Flight flight)
-        public List<Traveller> SeniorTravellers(Flight flight)
-        {
-            var query = flight.passengers.OfType<Traveller>()
-               // .Where(p => p is Traveller)
-                .OrderBy(p => p.BirthDate).Take(3).ToList();
-            List<Passenger> p = new List<Passenger>(query); //cas implicite w9t n5alou return passenger
-            //return query.ToList();
-            return query;
-        }
+        //public List<Traveller> SeniorTravellers(Flight flight)
+        //{
+        //    var query = flight.passengers.OfType<Traveller>()
+        //       // .Where(p => p is Traveller)
+        //        .OrderBy(p => p.BirthDate).Take(3).ToList();
+        //    List<Passenger> p = new List<Passenger>(query); //cas implicite w9t n5alou return passenger
+        //    //return query.ToList();
+        //    return query;
+        //}
         public void DestinationGroupedFlights()
         {
             var query = Flights

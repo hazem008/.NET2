@@ -1147,6 +1147,9 @@
       "AM.ApplicationCore/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Abstractions": "7.0.3"
+        },
         "compile": {
           "bin/placeholder/AM.ApplicationCore.dll": {}
         },
@@ -3513,11 +3516,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\msi\\Documents\\4SE5\\Seme2\\.NET\\Mes projets\\ProjetDotNet-master\\AM.UI.Console\\AM.UI.Console.csproj",
+      "projectUniqueName": "C:\\Users\\msi\\Documents\\4SE5\\Seme2\\.NET\\Mes projets\\ProjetDotNet\\AM.UI.Console\\AM.UI.Console.csproj",
       "projectName": "AM.UI.Console",
-      "projectPath": "C:\\Users\\msi\\Documents\\4SE5\\Seme2\\.NET\\Mes projets\\ProjetDotNet-master\\AM.UI.Console\\AM.UI.Console.csproj",
+      "projectPath": "C:\\Users\\msi\\Documents\\4SE5\\Seme2\\.NET\\Mes projets\\ProjetDotNet\\AM.UI.Console\\AM.UI.Console.csproj",
       "packagesPath": "C:\\Users\\msi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\msi\\Documents\\4SE5\\Seme2\\.NET\\Mes projets\\ProjetDotNet-master\\AM.UI.Console\\obj\\",
+      "outputPath": "C:\\Users\\msi\\Documents\\4SE5\\Seme2\\.NET\\Mes projets\\ProjetDotNet\\AM.UI.Console\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\msi\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3534,11 +3537,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\msi\\Documents\\4SE5\\Seme2\\.NET\\Mes projets\\ProjetDotNet-master\\AM.ApplicationCore\\AM.ApplicationCore.csproj": {
-              "projectPath": "C:\\Users\\msi\\Documents\\4SE5\\Seme2\\.NET\\Mes projets\\ProjetDotNet-master\\AM.ApplicationCore\\AM.ApplicationCore.csproj"
+            "C:\\Users\\msi\\Documents\\4SE5\\Seme2\\.NET\\Mes projets\\ProjetDotNet\\AM.ApplicationCore\\AM.ApplicationCore.csproj": {
+              "projectPath": "C:\\Users\\msi\\Documents\\4SE5\\Seme2\\.NET\\Mes projets\\ProjetDotNet\\AM.ApplicationCore\\AM.ApplicationCore.csproj"
             },
-            "C:\\Users\\msi\\Documents\\4SE5\\Seme2\\.NET\\Mes projets\\ProjetDotNet-master\\AM.Infrastrecture\\AM.Infrastrecture.csproj": {
-              "projectPath": "C:\\Users\\msi\\Documents\\4SE5\\Seme2\\.NET\\Mes projets\\ProjetDotNet-master\\AM.Infrastrecture\\AM.Infrastrecture.csproj"
+            "C:\\Users\\msi\\Documents\\4SE5\\Seme2\\.NET\\Mes projets\\ProjetDotNet\\AM.Infrastrecture\\AM.Infrastrecture.csproj": {
+              "projectPath": "C:\\Users\\msi\\Documents\\4SE5\\Seme2\\.NET\\Mes projets\\ProjetDotNet\\AM.Infrastrecture\\AM.Infrastrecture.csproj"
             }
           }
         }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IxdNTR+0x4vejvFrxTuBQbGF3nv84+tgYSVSDw7TJWj/q6bNmE0D1263jtBuexw8zoJVpDQhvhdI9fSmdCuPkQ==",
+  "dgSpecHash": "3n65a14YXivlMewCqrH79/FClikH4H/bv3pxDqd49jNqJy+yT3E7hn1GMgHs2LEXok5GCxXlm1OZUVGLGP4jVw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\msi\\Documents\\4SE5\\Seme2\\.NET\\Mes projets\\ProjetDotNet-master\\AM.Infrastrecture\\AM.Infrastrecture.csproj",
+  "projectFilePath": "C:\\Users\\msi\\Documents\\4SE5\\Seme2\\.NET\\Mes projets\\ProjetDotNet\\AM.Infrastrecture\\AM.Infrastrecture.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\msi\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\msi\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

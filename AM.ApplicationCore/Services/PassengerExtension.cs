@@ -15,8 +15,8 @@ namespace AM.ApplicationCore.Services
             // passenger.FirstName = passenger.FirstName.ToUpper();
             //Substring ( a="hello") | a.Substring(2,3) == ll | a.Substring(2) = llo
             //
-            passenger.FirstName = passenger.FirstName[0].ToString().ToUpper()+ passenger.FirstName.Substring(1);
-            passenger.LastName = passenger.LastName[0].ToString().ToUpper() + passenger.LastName.Substring(1);  
+           // passenger.FirstName = passenger.FirstName[0].ToString().ToUpper()+ passenger.FirstName.Substring(1);
+            //passenger.LastName = passenger.LastName[0].ToString().ToUpper() + passenger.LastName.Substring(1);  
         }
         public static int add(this int a, int b ) {//this a: pour injection dans la class int
             return a + b;

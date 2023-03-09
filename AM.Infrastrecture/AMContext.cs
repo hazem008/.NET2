@@ -1,4 +1,5 @@
 ﻿using AM.ApplicationCore.Domain;
+using AM.Infrastrecture.Configuration;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,24 @@ namespace AM.Infrastrecture
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Data Source = (localdb)\MsSqlLocalDb; initial catalog=KharroubiHazem; integrated Security = true");
+            optionsBuilder.UseSqlServer(@"Data Source = (localdb)\MsSqlLocalDb; initial catalog=hazemKharroubi; integrated Security = true");
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new FlightConfiguration());
+            //modelBuilder.ApplyConfiguration(new PassegerConfiguration());
+            modelBuilder.Entity<Passenger>().ToTable("Passangers");
+            modelBuilder.Entity<Traveller>().ToTable("Travallers");
+            modelBuilder.Entity<Staff>().ToTable("Staffs");
+            modelBuilder.ApplyConfiguration(new ConfigurationTicket());
+        }
+        protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
+        {
+            configurationBuilder.Properties<string>().HaveMaxLength(120);
+        }
+
+
+
     }
 }
