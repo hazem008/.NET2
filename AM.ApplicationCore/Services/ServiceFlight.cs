@@ -200,14 +200,14 @@ namespace AM.ApplicationCore.Services
             // .Where(f => f.FlightDate > startDate && (f.FlightDate - startDate).TotalDays < 7)
             // .Count();
             return query;
-        }
+        }/*
         public double DurationAverage(string destination)
         {
             var query = Flights
                 .Where(f => f.Destination.Equals(destination))
                 .Average(f => f.EstimationDuration);
             return query;
-        }
+        }*/
        public List<Flight> OrderedDurationFlights()
         {
             var query = from f in Flights orderby(f.EstimationDuration) descending select (f);
@@ -284,14 +284,14 @@ namespace AM.ApplicationCore.Services
                 {
                     Console.WriteLine(item);
                 }
-            };
+            };/*
             DurationAverageDel = dAv =>
             {
                 var query = Flights
                 .Where(f => f.Destination.Equals(dAv))
                 .Average(f => f.EstimationDuration);
                 return query;
-            };
+            };*/
         }
     }
     

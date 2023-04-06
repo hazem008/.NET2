@@ -37,6 +37,7 @@
 using AM.ApplicationCore.Domain;
 using AM.ApplicationCore.Interfaces;
 using AM.ApplicationCore.Services;
+using AM.Infrastrecture;
 using System.Collections;
 using System.Net.Mail;
 //using System.Numerics;
@@ -170,11 +171,12 @@ foreach (var flight in serviceFlight.GetFlightDates("Paris"))
 {
     Console.WriteLine("le date est: " + flight);
 };
+/*
 serviceFlight.ShowFlightDetails(pl);
 Console.WriteLine("la moyenne de durée estimées des vols:");
 Console.WriteLine(serviceFlight.DurationAverage("Paris"));
 Console.WriteLine("le nombre de vols programmés pour une semaine (7jours):");
-Console.WriteLine(serviceFlight.ProgrammedFlightNumber(new DateTime(2022, 01, 01)));
+Console.WriteLine(serviceFlight.ProgrammedFlightNumber(new DateTime(2022, 01, 01)));*/
 
 foreach (var flight in serviceFlight.OrderedDurationFlights())
 {
@@ -187,7 +189,7 @@ foreach (var flight in serviceFlight.OrderedDurationFlights())
 Console.WriteLine("les vols groupés par destination: ");
 serviceFlight.DestinationGroupedFlights();
 Console.WriteLine("IV- Expressions Lambda / Les méthodes LINQ prédéfinies: ");
-Console.WriteLine(serviceFlight.DurationAverageDel("Paris"));
+//Console.WriteLine(serviceFlight.DurationAverageDel("Paris"));
 serviceFlight.FlightDetailsDel(avion2);
 Passenger pasn1 = new Passenger()
 {
@@ -207,3 +209,13 @@ pasn1.UpperFullName();
 
 Console.WriteLine(pasn1);
 
+// Gerer la base de donnée : Ajoute une ligne à l'entitée flight
+AMContext am = new AMContext();
+am.Flights.Add(new Flight() { Destination = "Tunis", Departure = "Bennane", EffectiveArrival = new DateTime(2001,2,22),EstimationDuration=1,FlightDate=(new DateTime(2021,3,2)),plane
+=new Plane() {Capacity=44,ManufactureDate=new DateTime(2021,3,3),planeType=PlaneType.Boing}});
+am.SaveChanges();
+
+foreach(var item in am.Flights)
+{
+    Console.WriteLine(item.FlightId + "/" + item.Departure);
+}

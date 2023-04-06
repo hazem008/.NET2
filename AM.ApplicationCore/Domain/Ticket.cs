@@ -19,10 +19,10 @@ namespace AM.ApplicationCore.Domain
         public Passenger passenger { get; set; }
 //        [Key]
 
-        [ForeignKey("FlightFK")]
+      //  [ForeignKey("FlightFK")]
         public int FlightFK { get; set; }
         //[Key]
-        [ForeignKey("PassangerFK")]
+       // [ForeignKey("PassangerFK")]
         public int PassangerFK { get; set; }
 
 
