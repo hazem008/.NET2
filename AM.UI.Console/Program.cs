@@ -154,68 +154,68 @@ Console.WriteLine(Personne.nb);
 Personne p33 = new Personne();
 Console.WriteLine(Personne.nb);
 
-Console.WriteLine("************ TP2 5- ************* ");
-ServiceFlight serviceFlight = new ServiceFlight();
-serviceFlight.Flights = TestData.Flights;
-serviceFlight.GetFlights("Paris", delegate (Flight f, String c)
-{
-    return f.Destination == c;
-}
-);
-serviceFlight.GetFlights("2023/01/01", delegate (Flight f, String c)
-{
-    return f.FlightDate.Equals(c);
-}
-);
-foreach (var flight in serviceFlight.GetFlightDates("Paris"))
-{
-    Console.WriteLine("le date est: " + flight);
-};
-/*
-serviceFlight.ShowFlightDetails(pl);
-Console.WriteLine("la moyenne de durée estimées des vols:");
-Console.WriteLine(serviceFlight.DurationAverage("Paris"));
-Console.WriteLine("le nombre de vols programmés pour une semaine (7jours):");
-Console.WriteLine(serviceFlight.ProgrammedFlightNumber(new DateTime(2022, 01, 01)));*/
-
-foreach (var flight in serviceFlight.OrderedDurationFlights())
-{
-    Console.WriteLine("l'ordere est: " + flight);
-};
-//foreach (var f in serviceFlight.SeniorTravellers(TestData.F1))
-{
-    //Console.WriteLine("les senior travellers: " + f.FirstName);
-};
-Console.WriteLine("les vols groupés par destination: ");
-serviceFlight.DestinationGroupedFlights();
-Console.WriteLine("IV- Expressions Lambda / Les méthodes LINQ prédéfinies: ");
-//Console.WriteLine(serviceFlight.DurationAverageDel("Paris"));
-serviceFlight.FlightDetailsDel(avion2);
-Passenger pasn1 = new Passenger()
-{
-    //FirstName = "kharroubi",
-    //LastName = "hazem"
-};
+//Console.WriteLine("************ TP2 5- ************* ");
+//ServiceFlight serviceFlight = new ServiceFlight();
+//serviceFlight.Flights = TestData.Flights;
+//serviceFlight.GetFlights("Paris", delegate (Flight f, String c)
 //{
-//    FirstName = "stormi",
-//    LastName = "store"
+//    return f.Destination == c;
+//}
+//);
+//serviceFlight.GetFlights("2023/01/01", delegate (Flight f, String c)
+//{
+//    return f.FlightDate.Equals(c);
+//}
+//);
+//foreach (var flight in serviceFlight.GetFlightDates("Paris"))
+//{
+//    Console.WriteLine("le date est: " + flight);
 //};
-//Console.WriteLine(" ******** Résultat de la méthode d’ extension UpperFullName **************");
+///*
+//serviceFlight.ShowFlightDetails(pl);
+//Console.WriteLine("la moyenne de durée estimées des vols:");
+//Console.WriteLine(serviceFlight.DurationAverage("Paris"));
+//Console.WriteLine("le nombre de vols programmés pour une semaine (7jours):");
+//Console.WriteLine(serviceFlight.ProgrammedFlightNumber(new DateTime(2022, 01, 01)));*/
+
+//foreach (var flight in serviceFlight.OrderedDurationFlights())
+//{
+//    Console.WriteLine("l'ordere est: " + flight);
+//};
+////foreach (var f in serviceFlight.SeniorTravellers(TestData.F1))
+//{
+//    //Console.WriteLine("les senior travellers: " + f.FirstName);
+//};
+//Console.WriteLine("les vols groupés par destination: ");
+//serviceFlight.DestinationGroupedFlights();
+//Console.WriteLine("IV- Expressions Lambda / Les méthodes LINQ prédéfinies: ");
+////Console.WriteLine(serviceFlight.DurationAverageDel("Paris"));
+//serviceFlight.FlightDetailsDel(avion2);
+//Passenger pasn1 = new Passenger()
+//{
+//    //FirstName = "kharroubi",
+//    //LastName = "hazem"
+//};
+////{
+////    FirstName = "stormi",
+////    LastName = "store"
+////};
+////Console.WriteLine(" ******** Résultat de la méthode d’ extension UpperFullName **************");
+////pasn1.UpperFullName();
+////Console.WriteLine(pasn1.ToString());
+//int a = 11;
+
 //pasn1.UpperFullName();
-//Console.WriteLine(pasn1.ToString());
-int a = 11;
 
-pasn1.UpperFullName();
+//Console.WriteLine(pasn1);
 
-Console.WriteLine(pasn1);
+//// Gerer la base de donnée : Ajoute une ligne à l'entitée flight
+//AMContext am = new AMContext();
+//am.Flights.Add(new Flight() { Destination = "Tunis", Departure = "Bennane", EffectiveArrival = new DateTime(2001,2,22),EstimationDuration=1,FlightDate=(new DateTime(2021,3,2)),plane
+//=new Plane() {Capacity=44,ManufactureDate=new DateTime(2021,3,3),planeType=PlaneType.Boing}});
+//am.SaveChanges();
 
-// Gerer la base de donnée : Ajoute une ligne à l'entitée flight
-AMContext am = new AMContext();
-am.Flights.Add(new Flight() { Destination = "Tunis", Departure = "Bennane", EffectiveArrival = new DateTime(2001,2,22),EstimationDuration=1,FlightDate=(new DateTime(2021,3,2)),plane
-=new Plane() {Capacity=44,ManufactureDate=new DateTime(2021,3,3),planeType=PlaneType.Boing}});
-am.SaveChanges();
-
-foreach(var item in am.Flights)
-{
-    Console.WriteLine(item.FlightId + "/" + item.Departure);
-}
+//foreach(var item in am.Flights)
+//{
+//    Console.WriteLine(item.FlightId + "/" + item.Departure);
+//}
