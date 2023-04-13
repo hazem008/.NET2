@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 namespace AM.ApplicationCore.Services
 {
-    public class ServiceFlight : IServiceFlight
+    public class ServiceFlight : Service<Flight>,IServiceFlight
     {
-       
+       public ServiceFlight(IUnitOfWork uow): base(uow) { }
         public List<Flight> Flights { get; set; } = new List<Flight>();
 
         public List<DateTime> GetFlightDates(string destination)
@@ -268,31 +268,34 @@ namespace AM.ApplicationCore.Services
         {
             throw new NotImplementedException();
         }
+
+       
+
         /************* Partie IV*****************/
         public Action<Plane> FlightDetailsDel { get; set; }//prop +double tabulation
         public Func<string, double> DurationAverageDel { get; set; }
-        public ServiceFlight()//ctor +double tabulation
-        {
-            /*FlightDetailsDel = ShowFlightDetails;
-             DurationAverageDel = DurationAverage; */
-            FlightDetailsDel = (Plane plane) =>
-            {
-                var query = Flights
-               .Where(f => f.plane.PlaneId == plane.PlaneId)
-               .Select(f => new { f.Destination, f.FlightDate });
-                foreach (var item in query)
-                {
-                    Console.WriteLine(item);
-                }
-            };/*
-            DurationAverageDel = dAv =>
-            {
-                var query = Flights
-                .Where(f => f.Destination.Equals(dAv))
-                .Average(f => f.EstimationDuration);
-                return query;
-            };*/
-        }
+    //    public ServiceFlight()//ctor +double tabulation
+    //    {
+    //        /*FlightDetailsDel = ShowFlightDetails;
+    //         DurationAverageDel = DurationAverage; */
+    //        FlightDetailsDel = (Plane plane) =>
+    //        {
+    //            var query = Flights
+    //           .Where(f => f.plane.PlaneId == plane.PlaneId)
+    //           .Select(f => new { f.Destination, f.FlightDate });
+    //            foreach (var item in query)
+    //            {
+    //                Console.WriteLine(item);
+    //            }
+    //        };/*
+    //        DurationAverageDel = dAv =>
+    //        {
+    //            var query = Flights
+    //            .Where(f => f.Destination.Equals(dAv))
+    //            .Average(f => f.EstimationDuration);
+    //            return query;
+    //        };*/
+    //    }
     }
     
 }
