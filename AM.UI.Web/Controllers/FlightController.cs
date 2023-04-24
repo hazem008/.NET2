@@ -1,20 +1,35 @@
-﻿using AM.ApplicationCore.Interfaces;
+﻿using AM.ApplicationCore.Domain;
+using AM.ApplicationCore.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+
 namespace AM.UI.Web.Controllers
 {
     public class FlightController : Controller
     {
         IServiceFlight serviceFlight;
-        public FlightController( IServiceFlight serviceFlight)
+        IServicePlane ServicePlane;
+        public FlightController( IServiceFlight serviceFlight,IServicePlane servicePlane)
         {
             this.serviceFlight = serviceFlight;
+            this.ServicePlane= servicePlane;
         }
 
         // GET: FlightController
-        public ActionResult Index()
+        public ActionResult Index(string Destination, string Departure)
         {
             var flights = serviceFlight.GetAll();
+            if (Destination != null && Departure !=null) {
+            
+            flights = flights.Where(f => f.Destination.Contains(Destination)&& f.Departure.Contains(Departure));
+              
+            }else if(Destination != null){
+                flights = flights.Where(f => f.Destination.Contains(Destination));
+            }else if(Departure != null){
+                flights = flights.Where(f => f.Departure.Contains(Departure));
+            }
             return View(flights);
+
         }
 
         // GET: FlightController/Details/5
@@ -26,14 +41,17 @@ namespace AM.UI.Web.Controllers
         // GET: FlightController/Create
         public ActionResult Create()
         {
+            ViewBag.planes =new SelectList (ServicePlane.GetAll(),"PlaneId","Information");
             return View();
         }
 
         // POST: FlightController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(Flight collection)
         {
+            serviceFlight.Add(collection);
+            serviceFlight.Commit();
             try
             {
                 return RedirectToAction(nameof(Index));

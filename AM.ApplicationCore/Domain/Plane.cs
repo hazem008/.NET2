@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +22,8 @@ namespace AM.ApplicationCore.Domain
         public PlaneType planeType { get; set; }
         public ICollection<Flight> Flights { get; set; }
         //List<Passenger> Passenger { get; set; }
+        [NotMapped]
+        public String Information { get { return Capacity + " " + PlaneId + " " + ManufactureDate + " " + planeType; } }
         public override string ToString()
         {
             return "Capacity: " + Capacity + ", ManufactureDate: " + ManufactureDate + ", PlaneType: " + planeType;
